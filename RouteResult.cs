@@ -88,8 +88,8 @@ namespace A25
             sql.Append("            ) T5 ").AppendLine();
             sql.Append("       JOIN ITEM_MATERIAL_INFO T6 ").AppendLine();
             sql.Append("       ON T5.ITEM_COLOR = T6.COLOR ").AppendLine();
-            sql.Append("       WHERE " + gift1 + " IN (T6.PROPERTY1, T6.PROPERTY2, T5.GIFT1_1, T5.GIFT1_2, T5.GIFT1_3, T5.GIFT2_1, T5.GIFT2_2, T5.GIFT2_3) AND ").AppendLine();
-            sql.Append("             " + gift2 + " IN (T6.PROPERTY1, T6.PROPERTY2, T5.GIFT1_1, T5.GIFT1_2, T5.GIFT1_3, T5.GIFT2_1, T5.GIFT2_2, T5.GIFT2_3) ").AppendLine();
+            sql.Append("       WHERE (" + gift1 + " = T6.PROPERTY1 OR " + gift1 + " = T6.PROPERTY2 OR " + gift1 + " = T5.GIFT1_1 OR " + gift1 + " = T5.GIFT1_2 OR " + gift1 + " = T5.GIFT1_3 OR " + gift1 + " = T5.GIFT2_1 OR " + gift1 + " = T5.GIFT2_2 OR " + gift1 + " = T5.GIFT2_3) AND ").AppendLine();
+            sql.Append("             (" + gift2 + " = T6.PROPERTY1 OR " + gift2 + " = T6.PROPERTY2 OR " + gift2 + " = T5.GIFT1_1 OR " + gift2 + " = T5.GIFT1_2 OR " + gift2 + " = T5.GIFT1_3 OR " + gift2 + " = T5.GIFT2_1 OR " + gift2 + " = T5.GIFT2_2 OR " + gift2 + " = T5.GIFT2_3) ").AppendLine();
             sql.Append("      ) T ").AppendLine();
             sql.Append(" LEFT OUTER JOIN ").AppendLine();
             sql.Append(" CHARA_BASE_INFO T7 ").AppendLine();
