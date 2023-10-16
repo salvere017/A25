@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textbox_character = new TextBox();
+            textbox_memoria_name = new TextBox();
             textbox_speed_value = new TextBox();
             textbox_magic_defend_value = new TextBox();
             textbox_magic_atk_value = new TextBox();
@@ -47,15 +47,16 @@
             textbox_ability1_name = new TextBox();
             label1 = new Label();
             combobox_rare = new ComboBox();
+            submit_button = new Button();
             SuspendLayout();
             // 
-            // textbox_character
+            // textbox_memoria_name
             // 
-            textbox_character.Font = new Font("メイリオ", 17F, FontStyle.Bold, GraphicsUnit.Point);
-            textbox_character.Location = new Point(34, 36);
-            textbox_character.Name = "textbox_character";
-            textbox_character.Size = new Size(307, 41);
-            textbox_character.TabIndex = 4;
+            textbox_memoria_name.Font = new Font("メイリオ", 17F, FontStyle.Bold, GraphicsUnit.Point);
+            textbox_memoria_name.Location = new Point(34, 36);
+            textbox_memoria_name.Name = "textbox_memoria_name";
+            textbox_memoria_name.Size = new Size(307, 41);
+            textbox_memoria_name.TabIndex = 4;
             // 
             // textbox_speed_value
             // 
@@ -185,7 +186,7 @@
             textbox_ability1_value.Location = new Point(390, 176);
             textbox_ability1_value.Multiline = true;
             textbox_ability1_value.Name = "textbox_ability1_value";
-            textbox_ability1_value.Size = new Size(371, 229);
+            textbox_ability1_value.Size = new Size(356, 177);
             textbox_ability1_value.TabIndex = 83;
             // 
             // textbox_ability1_name
@@ -214,11 +215,22 @@
             combobox_rare.Size = new Size(100, 23);
             combobox_rare.TabIndex = 92;
             // 
+            // submit_button
+            // 
+            submit_button.Font = new Font("メイリオ", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            submit_button.Location = new Point(610, 374);
+            submit_button.Name = "submit_button";
+            submit_button.Size = new Size(136, 64);
+            submit_button.TabIndex = 93;
+            submit_button.Text = "入 力 完 了";
+            submit_button.Click += submit_button_Click;
+            // 
             // MemoriaDetailForAddOrEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(submit_button);
             Controls.Add(combobox_rare);
             Controls.Add(label1);
             Controls.Add(label_ability2_tile);
@@ -237,7 +249,7 @@
             Controls.Add(label_ph_attack);
             Controls.Add(textbox_hp_value);
             Controls.Add(label_hp);
-            Controls.Add(textbox_character);
+            Controls.Add(textbox_memoria_name);
             Name = "MemoriaDetailForAddOrEdit";
             Text = "MemoriaDetailForAddOrEdit";
             ResumeLayout(false);
@@ -246,7 +258,7 @@
 
         #endregion
 
-        private TextBox textbox_character;
+        private TextBox textbox_memoria_name;
         private TextBox textbox_speed_value;
         private TextBox textbox_magic_defend_value;
         private TextBox textbox_magic_atk_value;
@@ -265,5 +277,6 @@
         private TextBox textbox_ability1_name;
         private Label label1;
         private ComboBox combobox_rare;
+        private Button submit_button;
     }
 }

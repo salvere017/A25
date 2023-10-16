@@ -212,6 +212,7 @@ namespace A25
                 }
 
                 MessageBox.Show("登録完了!");
+                Close();
             }
             else
             {

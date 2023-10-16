@@ -61,7 +61,7 @@
             this.Controls.Add(datagrid_result_list);
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 500);
             this.BackColor = Color.White;
             this.Text = "錬成・調合ルート一覧";
         }
