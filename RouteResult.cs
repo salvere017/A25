@@ -142,41 +142,49 @@ namespace A25
                     string col1;
                     string col2;
                     string col3;
+                    
+                    
 
                     while (reader.Read())
                     {
                         try
                         {
-                            if (reader.GetString(3).Equals(""))
+                            string gift_string_link = reader.GetString(3) + reader.GetString(4) + reader.GetString(5);
+                            string[] gift_list = gift_string_link.Substring(0, gift_string_link.Length - 1).Split(',');
+                            //　有効ギフトは二つ以上の場合のみ結果有効
+                            if (gift_list.Length > 1)
                             {
-                                col1 = reader.GetString(0) + "(色中継・ギフト継承対象外)";
+                                if (reader.GetString(3).Equals(""))
+                                {
+                                    col1 = reader.GetString(0) + "(色中継・ギフト継承対象外)";
+                                }
+                                else
+                                {
+                                    col1 = reader.GetString(0) + "(" + reader.GetString(3).Substring(0, reader.GetString(3).Length - 1) + ")";
+                                }
+                                if (reader.GetString(4).Equals(""))
+                                {
+                                    col2 = reader.GetString(1) + "(色中継・ギフト継承対象外)";
+                                }
+                                else
+                                {
+                                    col2 = reader.GetString(1) + "(" + reader.GetString(4).Substring(0, reader.GetString(4).Length - 1) + ")";
+                                }
+                                if (reader.GetString(5).Equals(""))
+                                {
+                                    col3 = reader.GetString(2) + "(色中継・ギフト継承対象外)";
+                                }
+                                else
+                                {
+                                    col3 = reader.GetString(2) + "(" + reader.GetString(5).Substring(0, reader.GetString(5).Length - 1) + ")";
+                                }
+
+
+                                datatable_result.Rows.Add(col1,
+                                                          col2,
+                                                          col3
+                                                         );
                             }
-                            else
-                            {
-                                col1 = reader.GetString(0) + "(" + reader.GetString(3).Substring(0, reader.GetString(3).Length - 1) + ")";
-                            }
-                            if (reader.GetString(4).Equals(""))
-                            {
-                                col2 = reader.GetString(1) + "(色中継・ギフト継承対象外)";
-                            }
-                            else
-                            {
-                                col2 = reader.GetString(1) + "(" + reader.GetString(4).Substring(0, reader.GetString(4).Length - 1) + ")";
-                            }
-                            if (reader.GetString(5).Equals(""))
-                            {
-                                col3 = reader.GetString(2) + "(色中継・ギフト継承対象外)";
-                            }
-                            else
-                            {
-                                col3 = reader.GetString(2) + "(" + reader.GetString(5).Substring(0, reader.GetString(5).Length - 1) + ")";
-                            }
-                            
-                            
-                            datatable_result.Rows.Add(col1,
-                                                      col2,
-                                                      col3
-                                                     );
                         }
                         catch
                         {
